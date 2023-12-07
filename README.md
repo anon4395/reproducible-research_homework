@@ -1,19 +1,59 @@
 # Reproducible research: version control and R
-## Questions 1, 2 and 3
+### Questions 1, 2 and 3
 https://github.com/anon4395/logistic_growth
-## Question 4:
-- The 'random walks' code produces an output which plots a randomised path of a point on a two dimensional plane, with the colour corresponding to at which time the point was where (so we can tell the point started at the beginning of the dark blue line side, and ended at the the point at the end of the lighter blue side). Each time the *random_walk()* function is executed, a different random path is generated. The number within the bracket of this function specifies how long this walk should be, in this case, 500 time units.
+### Question 4:
+(i) The 'random walks' code produces an output which plots a randomised path of a point on a two dimensional plane, with the colour corresponding to at which time the point was where (so we can tell the point started at the beginning of the dark blue line side, and ended at the the point at the end of the lighter blue side). Each time the *random_walk()* function is executed, a different random path is generated. The number within the bracket of this function specifies how long this walk should be, in this case, 500 time units.
 ![Graph of initial random walks output](https://github.com/anon4395/reproducible-research_homework/blob/dev/random_walks_plot.png)
-- A random seed is a start point which initialises a psuedorandom number generator. When a 'random' number generator algorithm is run in R, its output is not truly random, but rather, it is psuedorandom, being determined by which 'random seed' was used to intialise it. If the same seed is used, the same 'random' output will be produced each time the function is executed, making the output reproducible. Depending on the algorithm in use, the starting input (the seed) will be used in different ways mathematically, but the same seed in the same algorithm will always produce the same output.
-- Reproducible simulation commit history:
+
+(ii) A random seed is a start point which initialises a psuedorandom number generator. When a 'random' number generator algorithm is run in R, its output is not truly random, but rather, it is psuedorandom, being determined by which 'random seed' was used to intialise it. If the same seed is used, the same 'random' output will be produced each time the function is executed, making the output reproducible. Depending on the algorithm in use, the starting input (the seed) will be used in different ways mathematically, but the same seed in the same algorithm will always produce the same output.
+
+(iv) Reproducible simulation commit history:
 ![commit history](https://github.com/anon4395/reproducible-research_homework/blob/dev/random_walk_commit_history.png)
 
-## Question 5:
-- The table has 13 columns, and 33 rows.
-- A log transformation can be used to fit a linear model to the allometric equation:
+### Question 5:
+(i) The table has 13 columns, and 33 rows.
+
+(ii) A log transformation can be used to fit a linear model to the allometric equation:
 
 $$\ V = \beta L^\alpha \$$
+
 $$\ ln(V) = ln(\beta) + \alpha ln(L) \$$
+Hence once transforming the data (see coding file) we can fit the linear model as such:
+```
+model1 <- lm(log_V ~ log_L, log_virus_data)
+```
+
+(iii) In the linear model, the gradient is alpha and the intercept is ln(beta). Values from summary table give:
+$$\ \alpha = 1.5152 \$$
+$$\ \beta = e^{7.0748} = 1181.8 \$$
+
+When rounded, these are the same values as in table 2 of the paper (alpha = 1.52, beta = 1182). 
+
+(iv) Code to reproduce the figure (also in a separate file in this repository):
+```
+log_virus_data %>%
+  ggplot(aes(x=log_L, 
+             y=log_V))+
+  geom_point()+
+  geom_smooth(method="lm", linewidth=0.8)+
+  labs(x="log[Genome length (kb)]", 
+       y ="log[Virion volume(nm3)]")+
+  theme(axis.title = element_text(face="bold"))+
+  theme_bw()
+```
+(v) Estimated volume of 300 kb dsDNA virus:
+```
+#Equation of linear model
+log_V <- 7.0748 + 1.5152*log_L 
+
+#L value input
+log_L <- log(300)
+
+#Calculate V
+V <- exp(log_V)
+V
+```
+Estimated volume of 300kb dsDNA virus is 6.70 x 10^6 nm^3.
 
 ## Instructions
 
