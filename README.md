@@ -1,5 +1,6 @@
 # Reproducible research: version control and R
-
+## Questions 1, 2 and 3
+https://github.com/anon4395/logistic_growth
 ## Question 4:
 - The 'random walks' code produces an output which plots a randomised path of a point on a two dimensional plane, with the colour corresponding to at which time the point was where (so we can tell the point started at the beginning of the dark blue line side, and ended at the the point at the end of the lighter blue side). Each time the *random_walk()* function is executed, a different random path is generated. The number within the bracket of this function specifies how long this walk should be, in this case, 500 time units.
 ![Graph of initial random walks output](https://github.com/anon4395/reproducible-research_homework/blob/dev/random_walks_plot.png)
