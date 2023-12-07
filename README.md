@@ -10,7 +10,10 @@ https://github.com/anon4395/logistic_growth
 
 ## Question 5:
 - The table has 13 columns, and 33 rows.
-- 
+- A log transformation can be used to fit a linear model to the allometric equation:
+
+$$\ V = \beta L^\alpha \$$
+$$\ ln(V) = ln(\beta) + \alpha ln(L) \$$
 
 ## Instructions
 
