@@ -8,6 +8,10 @@ https://github.com/anon4395/logistic_growth
 - Reproducible simulation commit history:
 ![commit history](https://github.com/anon4395/reproducible-research_homework/blob/dev/random_walk_commit_history.png)
 
+## Question 5:
+- The table has 13 columns, and 33 rows.
+- 
+
 ## Instructions
 
 The homework for this Computer skills practical is divided into 5 questions for a total of 100 points (plus an optional bonus question worth 10 extra points). First, fork this repo and make sure your fork is made **Public** for marking. Answers should be added to the # INSERT ANSWERS HERE # section above in the **README.md** file of your forked repository.
