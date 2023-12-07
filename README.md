@@ -3,12 +3,12 @@
 https://github.com/anon4395/logistic_growth
 ### Question 4:
 (i) The 'random walks' code produces an output which plots a randomised path of a point on a two dimensional plane, with the colour corresponding to at which time the point was where (so we can tell the point started at the beginning of the dark blue line side, and ended at the the point at the end of the lighter blue side). Each time the *random_walk()* function is executed, a different random path is generated. The number within the bracket of this function specifies how long this walk should be, in this case, 500 time units.
-![Graph of initial random walks output](https://github.com/anon4395/reproducible-research_homework/blob/dev/random_walks_plot.png)
+![Graph of initial random walks output](https://github.com/anon4395/reproducible-research_homework/blob/main/random_walks_plot.png)
 
 (ii) A random seed is a start point which initialises a psuedorandom number generator. When a 'random' number generator algorithm is run in R, its output is not truly random, but rather, it is psuedorandom, being determined by which 'random seed' was used to intialise it. If the same seed is used, the same 'random' output will be produced each time the function is executed, making the output reproducible. Depending on the algorithm in use, the starting input (the seed) will be used in different ways mathematically, but the same seed in the same algorithm will always produce the same output.
 
 (iv) Reproducible simulation commit history:
-![commit history](https://github.com/anon4395/reproducible-research_homework/blob/dev/random_walk_commit_history.png)
+![commit history](https://github.com/anon4395/reproducible-research_homework/blob/main/random_walk_commit_history.png)
 
 ### Question 5:
 (i) The table has 13 columns, and 33 rows.
@@ -56,7 +56,15 @@ V
 Estimated volume of 300kb dsDNA virus is 6.70 x 10^6 nm^3.
 
 ### Bonus Question:
+Reproducibility refers to using the same analytical methods and code to obtain the same results as the first analysis. Replicability on the other hand refers to repeating a whole study using the same research methods on a newly collected dataset to obtain the same overall results. Reproducibility is then mostly a measure of the robustness of analytical methods (and the code used to do this), whereas replicability more broadly considers the study design.
 
+Git enhances reproducibility by enabling version control, so that changes in analysis code are tracked and visible. Github enables sharing of this code, including its version history, so that other researchers can critique the code and analytical methods used, and also use them to reproduce the data. These files are dated so anyone can tell how up to date they are.
+
+Additionally, Github enables collaboration, as repositories can be forked, which directly enables another researcher to easily reproduce your data. Also, if multiple researchers are working on the same project, this forking feature enables different people to work on different versions of an analysis code, and later merge these into a main repository. This makes collaboration easier, but also protects the main files from accruing errors. 
+
+The structure of github repositories also provides background information about the study and the analysis, including an informative README file, raw data, and coding files, which can enhance the replicability of the studies. Furthermore, anyone viewing a github repository can easily contact the owner to ask any questions about the data or analysis, which may speed up the process of reproduction or replication.
+
+However, there are also some limitations to git and github. Firstly, although they are very user-friendly, it can take a little while to get used to the workflows. Another limitation may arise if the dataset in question is sensitive and there are privacy concerns, as storing this in a public github repository would not be suitable. 
 
 ## Instructions
 
